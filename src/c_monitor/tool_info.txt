@@ -1,0 +1,7 @@
+# Clone and install from source
+git clone https://github.com/Maciek-roboblog/Claude-Code-Usage-Monitor.git
+cd Claude-Code-Usage-Monitor
+uv tool install .
+
+# Run from anywhere
+claude-monitor
