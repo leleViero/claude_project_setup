@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '\"\\(.tool_input.command) - \\(.tool_input.description // \"No description\")\"' >> /logger/bash-command-log.txt"
+            "command": "powershell -Command \"New-Item -ItemType Directory -Force -Path project_agents\\logger | Out-Null; $cmd = $env:TOOL_INPUT_COMMAND; $desc = $env:TOOL_INPUT_DESCRIPTION; if (-not $desc) { $desc = 'No description' }; Add-Content -Path project_agents\\logger\\bash-command-log.txt -Value \\\"$(Get-Date -Format 'o') | $cmd - $desc\\\"\""
           }
         ]
       }
