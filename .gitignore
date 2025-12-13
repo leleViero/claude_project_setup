@@ -15,3 +15,7 @@ node_modules
 
 # personal folders
 /c_monitor
+
+# hook output logs
+**/logger/*.txt
+project_agents/logger/

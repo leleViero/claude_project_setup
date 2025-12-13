@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git config:*)",
+      "Bash(git flow:*)",
+      "Bash(tree:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\ndocs: fix inaccurate paths and enhance CLAUDE.md documentation\n\nCorrected directory references (src/.claude/ -> .claude/), added visual directory structure, and documented hook system, permissions, and git-flow-manager agent capabilities.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n)\")"
+    ]
+  }
+}
