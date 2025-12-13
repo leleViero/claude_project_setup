@@ -4,32 +4,72 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This repository demonstrates Claude Code project setup patterns and hook configurations. It contains multiple Claude settings directories showcasing different hook implementations.
-This repo will be used in all future projects allowing the distribution and version control of agents and hooks without having to modify the users one every time and create duplicates.
+This repository demonstrates Claude Code project setup patterns and hook configurations. It serves as a reusable template for distributing and version controlling Claude Code agents, hooks, and settings across multiple projects.
 
-## Architecture
+## Directory Structure
 
-### Claude Settings Structure
+```
+.claude/                    # Root-level Claude settings
+├── agents/                 # Custom agent definitions
+│   └── git-flow-manager.md
+├── settings.json          # Hook configurations
+└── settings.local.json    # Local overrides and permissions
 
-The repository contains multiple `.claude` directories with different configurations:
+src/
+├── agents/                # Source versions of agent definitions
+├── commands/              # Custom slash command definitions (empty placeholder)
+├── skills/                # Custom skill definitions (empty placeholder)
+└── project_agents/
+    └── logger/            # Hook output directory
 
-- `src/.claude/` - Root-level Claude settings with bash command logging hook
+project_agents/logger/     # Alternative hook output location
+```
 
+## Hook System
 
-### Hook Configuration
+### Pre-Tool Use Hook
 
-The hooks capture Bash tool usage and log command + description pairs:
-- `src/.claude/settings.json` - Logs to `/logger/bash-command-log.txt`
-- `src/.claude/settings.local.json` - Controls hook enablement via `disableAllHooks` flag
+The `.claude/settings.json` contains a `PreToolUse` hook that captures Bash tool invocations:
+
+- **Matcher**: `"Bash"` (case-sensitive)
+- **Type**: PowerShell command hook
+- **Function**: Dumps stdin (tool invocation JSON) to `project_agents/logger/stdin-dump.txt`
+- **Creates**: The logger directory automatically if it doesn't exist
+
+### Permission Configuration
+
+`.claude/settings.local.json` grants automatic approval for Git operations:
+- `Bash(git config:*)` - Git configuration commands
+- `Bash(git flow:*)` - Git Flow workflow commands
+
+## Custom Agents
+
+### git-flow-manager
+
+A specialized agent for Git Flow workflow management, located at:
+- `.claude/agents/git-flow-manager.md` (active configuration)
+- `src/agents/git-flow-manager.md` (source/template)
+
+**Capabilities**:
+- Branch creation and validation (feature/*, release/*, hotfix/*)
+- Conventional commit message formatting
+- Release management with semantic versioning
+- Pull request generation with gh CLI
+- Merge conflict resolution guidance
+
+**Tools Available**: Read, Bash, Grep, Glob, Edit, Write
+**Model**: Sonnet
+
+## Usage for New Projects
+
+To use this setup in a new project:
+
+1. Copy `.claude/` directory to the new project root
+2. Adjust hook output paths in `settings.json` if needed
+3. Customize `settings.local.json` permissions for project-specific commands
+4. Add custom agents to `.claude/agents/` as needed
+5. Keep source versions in `src/` for version control and distribution
 
 ## Development Commands
 
-This repository does not contain application code requiring build, test, or lint commands. It serves as a configuration reference for Claude Code setups.
-
-## Working with Hooks
-
-When modifying hook configurations:
-- Hooks use JSON input piped to `jq` for processing
-- The `matcher` field determines which tool triggers the hook (case-sensitive: "Bash" vs "bash")
-- Hook output paths differ between configurations (absolute `/logger/` vs home-relative `~/logger/`)
-- Local settings can override hook behavior using `disableAllHooks`
+This repository does not contain application code requiring build, test, or lint commands. It serves as a configuration template for Claude Code setups.
