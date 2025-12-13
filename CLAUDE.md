@@ -20,9 +20,9 @@ src/
 ├── commands/              # Custom slash command definitions (empty placeholder)
 ├── skills/                # Custom skill definitions (empty placeholder)
 └── project_agents/
-    └── logger/            # Hook output directory
+    └── logger/            # Source/template hook output examples
 
-project_agents/logger/     # Alternative hook output location
+project_agents/logger/     # Runtime hook output location (created automatically)
 ```
 
 ## Hook System
