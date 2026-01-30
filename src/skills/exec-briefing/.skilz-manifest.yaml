@@ -1,0 +1,8 @@
+installed_at: '2026-01-30T16:14:02+00:00'
+skill_id: gtmagents/gtm-agents/exec-briefing
+git_repo: https://github.com/gtmagents/gtm-agents.git
+skill_path: /main/plugins/account-management/skills/exec-briefing
+git_sha: dc1cf8b41fc30f8e029a941433f8cb3845fca126
+skilz_version: 1.10.0
+install_mode: copy
+canonical_path: null

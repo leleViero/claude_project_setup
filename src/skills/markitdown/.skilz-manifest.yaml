@@ -1,0 +1,8 @@
+installed_at: '2026-01-30T20:23:51+00:00'
+skill_id: jimmc414/Kosmos/markitdown
+git_repo: https://github.com/jimmc414/Kosmos.git
+skill_path: /main/kosmos-claude-scientific-skills/scientific-skills/markitdown
+git_sha: a3429b7d08e4a395958a1ce7a317a97bdc51ec18
+skilz_version: 1.10.0
+install_mode: copy
+canonical_path: null

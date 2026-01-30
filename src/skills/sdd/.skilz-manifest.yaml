@@ -1,0 +1,8 @@
+installed_at: '2026-01-30T20:26:48+00:00'
+skill_id: SpillwaveSolutions/sdd-skill/sdd
+git_repo: https://github.com/SpillwaveSolutions/sdd-skill.git
+skill_path: /main/SKILL.md
+git_sha: eba96064a34ae68c85c0a42186cf82da12ec5ef9
+skilz_version: 1.10.0
+install_mode: copy
+canonical_path: null

@@ -1,0 +1,8 @@
+installed_at: '2026-01-30T16:08:24+00:00'
+skill_id: sandraschi/advanced-memory-mcp/git-workflow-specialist
+git_repo: https://github.com/sandraschi/advanced-memory-mcp.git
+skill_path: /main/skills/technical/git-workflow-specialist
+git_sha: e26f3dcdb30711b2d21581cbb53ce5008a7c4877
+skilz_version: 1.10.0
+install_mode: copy
+canonical_path: null
