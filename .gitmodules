@@ -1,0 +1,3 @@
+[submodule "src/lele-spframework"]
+	path = src/lele-spframework
+	url = https://github.com/leleViero/lele_sp
