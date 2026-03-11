@@ -3,7 +3,7 @@
 image_downloader.py
 
 Processes a markdown file, downloads all remote images to a local
-assets/images/ folder alongside the markdown file, and rewrites all
+_ref/ folder alongside the markdown file, and rewrites all
 image references in-place to use local relative paths.
 
 Usage:
@@ -137,13 +137,13 @@ class MarkdownImageParser:
 
 class AssetStore:
     """
-    Manages the ``assets/images/`` directory adjacent to the markdown file.
+    Manages the ``_ref/`` directory adjacent to the markdown file.
 
     Ensures unique filenames by appending a counter suffix on collision.
     """
 
     def __init__(self, markdown_path: Path) -> None:
-        self._assets_dir = markdown_path.parent / "assets" / "images"
+        self._assets_dir = markdown_path.parent / "_ref"
         self._assets_dir.mkdir(parents=True, exist_ok=True)
         self._allocated: set[str] = set()
 
