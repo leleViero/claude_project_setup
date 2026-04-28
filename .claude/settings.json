@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -Command \"New-Item -ItemType Directory -Force -Path project_agents\\logger | Out-Null; $input = [Console]::In.ReadToEnd(); Add-Content -Path project_agents\\logger\\stdin-dump.txt -Value $input\""
+            "command": "powershell -Command \"New-Item -ItemType Directory -Force -Path project_agents\\logger | Out-Null; \\$stdinContent = [Console]::In.ReadToEnd(); Add-Content -Path project_agents\\logger\\stdin-dump.txt -Value \\$stdinContent\""
           }
         ]
       }
