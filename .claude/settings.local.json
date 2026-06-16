@@ -9,7 +9,10 @@
       "Bash(python:*)",
       "Bash(mkdir -p \"C:/Users/davi/Documents/01 Local repo/Daniele Personal/Daniele Personal_remoteSync/00 Markitdown-agent-IN/claude-code-agent-skills-2-0-from-instructions-to-programs/ref\")",
       "Bash(cp \"WIP/claude-code-agent/\"* \"C:/Users/davi/Documents/01 Local repo/Daniele Personal/Daniele Personal_remoteSync/00 Markitdown-agent-IN/claude-code-agent-skills-2-0-from-instructions-to-programs/ref/\")",
-      "mcp__markitdown__convert_to_markdown"
+      "mcp__markitdown__convert_to_markdown",
+      "Bash(cp \"WIP/becoming-a-top/\"*.png \"C:/Users/davi/Documents/01 Local repo/Daniele Personal/Daniele Personal_remoteSync/00 Markitdown-agent-IN/becoming-a-top-1percent-claude-code-user/ref/\")",
+      "Bash(cp \"WIP/becoming-a-top/\"*.jpg \"C:/Users/davi/Documents/01 Local repo/Daniele Personal/Daniele Personal_remoteSync/00 Markitdown-agent-IN/becoming-a-top-1percent-claude-code-user/ref/\")",
+      "Bash(python3 -c ' *)"
     ]
   },
   "hooks": {
